@@ -1,0 +1,28 @@
+df = read.csv("/Users/danielmsheehan/GitHub/withings/data/withings.csv")#
+#
+colnames(df)[2] <- "Weight"#
+names(df)#
+#
+df$Date = strptime(df$Date, "%Y-%m-%d %H:%M %p")#
+#
+head(df, n=10)#
+plot(df$Date,df$Weight,xlab="Time", ylab="Weight", main="Weight - Time", col="blue")#
+axis.Date(1,at=df$Date,labels=format(df$Date,"%m"),las=2)
+df = read.csv("/Users/danielmsheehan/GitHub/jawbone/data/jawbone.csv")#
+#
+names(df)#
+#
+df$DATE = strptime(df$DATE, "%Y%m%d")#
+#
+head(df, n=10)#
+plot(df$DATE,df$m_steps,xlab="Time", ylab="Weight", main="Weight - Time", col="blue")#
+axis.Date(1,at=df$DATE,labels=format(df$DATE,"%m"),las=2)
+df = read.csv("/Users/danielmsheehan/GitHub/jawbone/data/jawbone.csv")#
+#
+names(df)#
+#
+df$DATE = strptime(df$DATE, "%Y%m%d")#
+#
+head(df, n=10)#
+plot(df$DATE,df$m_steps,xlab="Time", ylab="Steps", main="Steps - Time", col="blue")#
+axis.Date(1,at=df$DATE,labels=format(df$DATE,"%m"),las=2)
